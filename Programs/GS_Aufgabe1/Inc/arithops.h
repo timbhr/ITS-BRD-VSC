@@ -1,7 +1,8 @@
 /**
  * @file arithops.h
- * @author Tim Behrens
- * @brief Header file for arithmetic operations.
+ * @author Tim Behrens, Nishan Khatiwada
+ * @brief Aufgabe 1
+ *        Header file for arithmetic operations.
  * @date Oktober 2026
  * 
  */
@@ -41,7 +42,7 @@ int arith_mul(void);
  *
  * @retval ERR_OK Success
  * @retval ERR_STACK_UNDERFLOW Fewer than 2 values on the stack
- * @retval ERR_OUT_OF_RANGE The quotient does not fit in an int
+ * @retval ERR_OUT_OF_RANGE The quotient does not fit in an int (Only possible for INT_MIN / -1)
  * @retval ERR_DIV_BY_0 The first (top) value is 0
  */
 int arith_div(void);

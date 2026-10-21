@@ -1,7 +1,8 @@
 /**
  * @file stackops.h
- * @author Tim Behrens
- * @brief Header file for stack operations.
+ * @author Tim Behrens, Nishan Khatiwada
+ * @brief Aufgabe 1
+ *        Header file for stack operations.
  * @date Oktober 2026
  *
  */
@@ -39,7 +40,7 @@ int print_top(void);
 
 /**
  * @brief Print the top 3 values of the stack, without changing the stack.
- * Incase there are fewer than 3 values on the stack, it will print as many as are available. 
+ * In case there are fewer than 3 values on the stack, it will print as many as are available. 
  *
  * @retval ERR_OK Success
  * @retval ERR_STACK_UNDERFLOW The stack is empty
