@@ -1,0 +1,9 @@
+{
+    "targetSet": {
+        "GS_Aufgabe2": {
+            "activeTargetType": "ITSboard"
+        }
+    },
+    "activeSolution": "../GS_Aufgabe2.csolution.yml",
+    "activeTarget": "ITSboard"
+}
