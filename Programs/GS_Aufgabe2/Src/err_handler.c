@@ -12,7 +12,7 @@
 
 static int active_error = ERR_OK;
 
-void err_handler(int code) {
+void err_handle(int code) {
     if (code != ERR_OK && active_error == ERR_OK) {
         active_error = code;
     }
