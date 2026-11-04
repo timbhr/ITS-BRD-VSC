@@ -1,20 +1,220 @@
 <mxfile host="app.diagrams.net">
-  <diagram name="Seite-1" id="rqTK6Rho6HSQW_1bp4vN">
-    <mxGraphModel dx="934" dy="563" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+  <diagram name="Seite-1" id="drehgeber-modulkonzept">
+    <mxGraphModel dx="1354" dy="816" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="827" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="6CiVnpWUvGn3K26J0A5o-5" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="main" vertex="1">
-          <mxGeometry height="86" width="160" x="320" y="80" as="geometry" />
+        <mxCell id="hdr_box" parent="1" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;fillColor=none;strokeColor=#999999;" value="" vertex="1">
+          <mxGeometry height="120" width="220" x="30" y="30" as="geometry" />
         </mxCell>
-        <mxCell id="6CiVnpWUvGn3K26J0A5o-6" parent="6CiVnpWUvGn3K26J0A5o-5" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="+ xyz" vertex="1">
-          <mxGeometry height="26" width="160" y="26" as="geometry" />
+        <mxCell id="hdr_lbl" parent="1" style="text;html=1;align=left;verticalAlign=middle;fontSize=9;fontColor=#666666;" value="Gemeinsamer Header – von allen Modulen eingebunden" vertex="1">
+          <mxGeometry height="20" width="240" x="30" y="8" as="geometry" />
         </mxCell>
-        <mxCell id="6CiVnpWUvGn3K26J0A5o-7" parent="6CiVnpWUvGn3K26J0A5o-5" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;labelPerimeter=1;" value="" vertex="1">
-          <mxGeometry height="8" width="160" y="52" as="geometry" />
+        <mxCell id="types_h" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&amp;lt;File&amp;gt; types" vertex="1">
+          <mxGeometry height="20" width="200" x="40" y="40" as="geometry" />
         </mxCell>
-        <mxCell id="6CiVnpWUvGn3K26J0A5o-8" parent="6CiVnpWUvGn3K26J0A5o-5" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="+ zyx" vertex="1">
-          <mxGeometry height="26" width="160" y="60" as="geometry" />
+        <mxCell id="types_v" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;fontSize=9;" value="enum Phase {PHASE_A, ..., PHASE_D}&lt;div&gt;struct PhaseSample {phase, timestamp}&lt;/div&gt;&lt;div&gt;enum Direction {DIR_UNKNOWN,&lt;/div&gt;&lt;div&gt;&amp;nbsp; DIR_FORWARD, DIR_BACKWARD}&lt;/div&gt;" vertex="1">
+          <mxGeometry height="56" width="200" x="40" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="types_f" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;fontSize=9;" value="" vertex="1">
+          <mxGeometry height="20" width="200" x="40" y="116" as="geometry" />
+        </mxCell>
+        <mxCell id="err_lbl" parent="1" style="text;html=1;align=left;verticalAlign=middle;fontSize=9;fontColor=#666666;" value="Fehlercodes eingebunden von phase_counter, display_output, test" vertex="1">
+          <mxGeometry height="20" width="320" x="280" y="8" as="geometry" />
+        </mxCell>
+        <mxCell id="err_h" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&amp;lt;File&amp;gt; error" vertex="1">
+          <mxGeometry height="20" width="200" x="280" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="err_v" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;fontSize=8;" value="ERR_OK = 0&lt;div&gt;ERR_PHASE_SKIPPED = (-1)&lt;/div&gt;&lt;div&gt;ERR_DISPLAY_BUFFER = (-2)&lt;/div&gt;" vertex="1">
+          <mxGeometry height="40" width="200" x="280" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="err_a" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;fontSize=9;" value="static int activeError" vertex="1">
+          <mxGeometry height="20" width="200" x="280" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="err_f" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;fontSize=9;" value="void err_handle(int code)&lt;div&gt;bool err_is_active(void)&lt;/div&gt;&lt;div&gt;int err_get_code(void)&lt;/div&gt;&lt;div&gt;void err_clear(void)&lt;/div&gt;" vertex="1">
+          <mxGeometry height="54" width="200" x="280" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="main_h" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&amp;lt;File&amp;gt; main" vertex="1">
+          <mxGeometry height="20" width="160" x="610" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="main_a" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;fontSize=9;" value="" vertex="1">
+          <mxGeometry height="20" width="160" x="610" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="main_f" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;fontSize=9;" value="int main(void)" vertex="1">
+          <mxGeometry height="20" width="160" x="610" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="time_h" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&amp;lt;File&amp;gt; timekeeping" vertex="1">
+          <mxGeometry height="20" width="170" x="40" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="time_a" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;fontSize=9;" value="static uint32_t lastTicks&lt;div&gt;static uint64_t totalTicks&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="170" x="40" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="time_f" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;fontSize=9;" value="void time_init(void)&lt;div&gt;void time_update(void)&lt;/div&gt;&lt;div&gt;uint64_t time_now(void)&lt;/div&gt;" vertex="1">
+          <mxGeometry height="42" width="170" x="40" y="290" as="geometry" />
+        </mxCell>
+        <mxCell id="in_h" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&amp;lt;File&amp;gt; input" vertex="1">
+          <mxGeometry height="20" width="190" x="240" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="in_a" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;fontSize=9;" value="" vertex="1">
+          <mxGeometry height="20" width="190" x="240" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="in_f" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;fontSize=9;" value="PhaseSample input_readPhase(void)&lt;div&gt;bool input_is_s6_pressed(void)&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="190" x="240" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="pc_h" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&amp;lt;File&amp;gt; phase_counter" vertex="1">
+          <mxGeometry height="20" width="200" x="460" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="pc_a" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;fontSize=9;" value="static Phase lastPhase&lt;div&gt;static int32_t count&lt;/div&gt;&lt;div&gt;static uint64_t count_timestamp&lt;/div&gt;&lt;div&gt;static Direction direction&lt;/div&gt;" vertex="1">
+          <mxGeometry height="54" width="200" x="460" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="pc_f" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;fontSize=9;" value="void pc_reset(void)&lt;div&gt;int pc_update(PhaseSample sample)&lt;/div&gt;&lt;div&gt;int32_t pc_get_count(void)&lt;/div&gt;&lt;div&gt;uint64_t pc_get_count_timestamp(void)&lt;/div&gt;&lt;div&gt;Direction pc_get_direction(void)&lt;/div&gt;" vertex="1">
+          <mxGeometry height="66" width="200" x="460" y="314" as="geometry" />
+        </mxCell>
+        <mxCell id="meas_h" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&amp;lt;File&amp;gt; measurement" vertex="1">
+          <mxGeometry height="20" width="220" x="690" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="meas_a" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;fontSize=9;" value="static int32_t startCount&lt;div&gt;static uint64_t startTimestamp&lt;/div&gt;&lt;div&gt;static uint64_t lastCalcTime&lt;/div&gt;&lt;div&gt;static double angle&lt;/div&gt;&lt;div&gt;static double velocity&lt;/div&gt;" vertex="1">
+          <mxGeometry height="66" width="220" x="690" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="meas_f" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;fontSize=9;" value="void meas_reset(int32_t count, uint64_t now)&lt;div&gt;bool meas_update(int32_t count,&lt;/div&gt;&lt;div&gt;&amp;nbsp; uint64_t count_ts, uint64_t now)&lt;/div&gt;&lt;div&gt;double meas_get_angle(void)&lt;/div&gt;&lt;div&gt;double meas_get_velocity(void)&lt;/div&gt;" vertex="1">
+          <mxGeometry height="66" width="220" x="690" y="326" as="geometry" />
+        </mxCell>
+        <mxCell id="disp_h" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&amp;lt;File&amp;gt; display_output" vertex="1">
+          <mxGeometry height="20" width="190" x="940" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="disp_a" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;fontSize=9;" value="static char buffer[BUF_SIZE]&lt;div&gt;static int bufPos&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="190" x="940" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="disp_f" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;fontSize=9;" value="void disp_init(void)&lt;div&gt;int disp_set_values(double angle,&lt;/div&gt;&lt;div&gt;&amp;nbsp; double velocity)&lt;/div&gt;&lt;div&gt;void disp_step(void)&lt;/div&gt;" vertex="1">
+          <mxGeometry height="54" width="190" x="940" y="290" as="geometry" />
+        </mxCell>
+        <mxCell id="led_h" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&amp;lt;File&amp;gt; led_output" vertex="1">
+          <mxGeometry height="20" width="180" x="1160" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="led_a" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;fontSize=9;" value="" vertex="1">
+          <mxGeometry height="20" width="180" x="1160" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="led_f" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;fontSize=9;" value="void led_init(void)&lt;div&gt;void led_show_count(int32_t count)&lt;/div&gt;&lt;div&gt;void led_show_direction(Direction dir)&lt;/div&gt;&lt;div&gt;void led_show_error(bool on)&lt;/div&gt;" vertex="1">
+          <mxGeometry height="54" width="180" x="1160" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="test_h" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&amp;lt;File&amp;gt; test" vertex="1">
+          <mxGeometry height="20" width="220" x="690" y="460" as="geometry" />
+        </mxCell>
+        <mxCell id="test_a" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;fontSize=9;" value="static int passed&lt;div&gt;static int failed&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="220" x="690" y="480" as="geometry" />
+        </mxCell>
+        <mxCell id="test_f" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;fontSize=9;" value="void test_run_all(void)" vertex="1">
+          <mxGeometry height="20" width="220" x="690" y="510" as="geometry" />
+        </mxCell>
+        <mxCell id="timer_h" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" value="&amp;lt;File&amp;gt; timer" vertex="1">
+          <mxGeometry height="20" width="170" x="40" y="620" as="geometry" />
+        </mxCell>
+        <mxCell id="timer_f" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" value="..." vertex="1">
+          <mxGeometry height="20" width="170" x="40" y="640" as="geometry" />
+        </mxCell>
+        <mxCell id="lcd_h" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" value="&amp;lt;File&amp;gt; lcd" vertex="1">
+          <mxGeometry height="20" width="180" x="990" y="620" as="geometry" />
+        </mxCell>
+        <mxCell id="lcd_f" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" value="..." vertex="1">
+          <mxGeometry height="20" width="180" x="990" y="640" as="geometry" />
+        </mxCell>
+        <mxCell id="stm_h" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" value="&amp;lt;File&amp;gt; stm32f4xx" vertex="1">
+          <mxGeometry height="20" width="1100" x="240" y="720" as="geometry" />
+        </mxCell>
+        <mxCell id="stm_f" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=center;fontSize=9;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" value="GPIOD, GPIOE, GPIOF&amp;nbsp; -&amp;gt;IDR, -&amp;gt;ODR, -&amp;gt;BSRR" vertex="1">
+          <mxGeometry height="20" width="1100" x="240" y="740" as="geometry" />
+        </mxCell>
+        <mxCell id="d_hdr" edge="1" parent="1" source="main_h" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;html=1;dashed=1;endArrow=classic;endFill=1;defaultLabelBackgroundColor=page;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="err_h">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="d_time" edge="1" parent="1" source="main_f" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;html=1;dashed=1;endArrow=classic;endFill=1;defaultLabelBackgroundColor=page;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="time_h">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="690" y="190" />
+              <mxPoint x="125" y="190" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d_in" edge="1" parent="1" source="main_f" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;html=1;dashed=1;endArrow=classic;endFill=1;defaultLabelBackgroundColor=page;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="in_h">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="690" y="190" />
+              <mxPoint x="335" y="190" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d_pc" edge="1" parent="1" source="main_f" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;html=1;dashed=1;endArrow=classic;endFill=1;defaultLabelBackgroundColor=page;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="pc_h">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="690" y="190" />
+              <mxPoint x="560" y="190" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d_meas" edge="1" parent="1" source="main_f" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;html=1;dashed=1;endArrow=classic;endFill=1;defaultLabelBackgroundColor=page;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="meas_h">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="690" y="190" />
+              <mxPoint x="800" y="190" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d_disp" edge="1" parent="1" source="main_f" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;html=1;dashed=1;endArrow=classic;endFill=1;defaultLabelBackgroundColor=page;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="disp_h">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="690" y="190" />
+              <mxPoint x="1035" y="190" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d_led" edge="1" parent="1" source="main_f" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;html=1;dashed=1;endArrow=classic;endFill=1;defaultLabelBackgroundColor=page;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="led_h">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="690" y="190" />
+              <mxPoint x="1250" y="190" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d_test" edge="1" parent="1" source="main_f" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;html=1;dashed=1;endArrow=classic;endFill=1;defaultLabelBackgroundColor=page;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="test_a">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="690" y="190" />
+              <mxPoint x="675" y="190" />
+              <mxPoint x="675" y="495" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d_in_time" edge="1" parent="1" source="in_f" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;html=1;dashed=1;endArrow=classic;endFill=1;defaultLabelBackgroundColor=page;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.119;entryDx=0;entryDy=0;" target="time_f">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="d_in_stm" edge="1" parent="1" source="in_f" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;html=1;dashed=1;endArrow=classic;endFill=1;defaultLabelBackgroundColor=page;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.0864;entryY=0;entryDx=0;entryDy=0;" target="stm_h">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="d_time_timer" edge="1" parent="1" source="time_f" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;html=1;dashed=1;endArrow=classic;endFill=1;defaultLabelBackgroundColor=page;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="timer_h">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="d_disp_lcd" edge="1" parent="1" source="disp_f" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;html=1;dashed=1;endArrow=classic;endFill=1;defaultLabelBackgroundColor=page;exitX=0.7368;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="lcd_h">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="d_led_stm" edge="1" parent="1" source="led_f" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;html=1;dashed=1;endArrow=classic;endFill=1;defaultLabelBackgroundColor=page;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.9182;entryY=0;entryDx=0;entryDy=0;" target="stm_h">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="d_test_meas" edge="1" parent="1" source="test_h" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;html=1;dashed=1;endArrow=classic;endFill=1;defaultLabelBackgroundColor=page;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" target="meas_f">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="d_test_pc" edge="1" parent="1" source="test_f" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;html=1;dashed=1;endArrow=classic;endFill=1;defaultLabelBackgroundColor=page;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.7;entryY=1;entryDx=0;entryDy=0;" target="pc_f">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="600" y="520" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d_test_disp" edge="1" parent="1" source="test_f" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;html=1;dashed=1;endArrow=classic;endFill=1;defaultLabelBackgroundColor=page;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.2632;entryY=1;entryDx=0;entryDy=0;" target="disp_f">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="990" y="520" />
+            </Array>
+          </mxGeometry>
         </mxCell>
       </root>
     </mxGraphModel>

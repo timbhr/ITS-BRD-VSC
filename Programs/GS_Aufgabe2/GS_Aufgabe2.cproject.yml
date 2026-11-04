@@ -195,6 +195,7 @@ project:
         - file: Inc/led_output.h
         - file: Inc/test.h
         - file: Inc/err_handler.h
+        - file: Src/led_output.c
 
     # Benutzerdefinierte Programmdateien
     - group: Program/User/Src
@@ -205,6 +206,7 @@ project:
         - file: Src/input.c
         - file: Src/timekeeping.c
         - file: Src/measurement.c
+        - file: Src/display_output.c
 
   components:
     - component: ARM::CMSIS:CORE

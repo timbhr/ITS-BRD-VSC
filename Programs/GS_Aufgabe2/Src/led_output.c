@@ -1,22 +1,30 @@
 /**
  ******************************************************************************
- * @file    main.c
+ * @file    led_output.c
  * @author  Tim Behrens, Nishan Khatiwada
  * @brief   Aufgabe 2
- *          Main program for incremental encoder
+ *          LED output functions for incremental encoder
  * @date    November 2026
  ******************************************************************************
  */
 
-#include "init.h"
+#include "led_output.h"
+#include <stdint.h>
 
-int main(void) {
-   initITSboard(); // Initialisierung des ITS Boards
+void led_init(void) {
 
+}
 
-   while (1) {
-      // Hauptschleife
-   }
+void led_show_count(int32_t count) {
+
+}
+
+void led_show_direction(Direction dir) {
+
+}
+
+void led_show_error(bool error_active) {
+   
 }
 
 // EOF
