@@ -91,6 +91,8 @@ project:
       files:
         - file: README.md
         - file: Modulkonzept Drehgeber.pdf
+        - file: Modulkonzept Drehgeber.docx
+        - file: Modulkonzept Drehgeber.drawio
 
     # BSP-Treiber für STM32F4xx Nucleo 144 Board
     - group: Drivers/BSP/STM32F4xx_Nucleo_144
