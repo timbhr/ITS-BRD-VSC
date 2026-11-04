@@ -198,6 +198,11 @@ project:
     - group: Program/User/Src
       files:
         - file: Src/main.c
+        - file: Src/err_handler.c
+        - file: Src/phase_counter.c
+        - file: Src/input.c
+        - file: Src/timekeeping.c
+        - file: Src/measurement.c
 
   components:
     - component: ARM::CMSIS:CORE
