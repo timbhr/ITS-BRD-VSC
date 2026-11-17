@@ -18,7 +18,7 @@ void disp_init(void);
 
 /**
  * @brief Set the values for display output in the buffer.
- * 
+ *
  * @param angle Angle in degrees
  * @param velocity Velocity in degrees per second
  *
@@ -31,8 +31,6 @@ int disp_set_values(double angle, double velocity);
  * @brief Update the display output. Outpost atmost 1 character per call.
  */
 void disp_step(void);
-
-
 
 #endif // DISPLAY_OUTPUT_H
 

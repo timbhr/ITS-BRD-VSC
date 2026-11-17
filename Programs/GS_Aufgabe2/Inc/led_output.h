@@ -12,9 +12,8 @@
 #define LED_OUTPUT_H
 
 #include "types.h"
-#include <stdint.h>
 #include <stdbool.h>
-
+#include <stdint.h>
 
 /**
  * @brief Initialize LED output.
@@ -29,7 +28,8 @@ void led_init(void);
 void led_show_count(int32_t count);
 
 /**
- * @brief Show direction on LEDs. (D23 = forward, D22 = backward) (off = no direction)
+ * @brief Show direction on LEDs. (D23 = forward, D22 = backward) (off = no
+ * direction)
  *
  * @param dir The direction to display.
  */
@@ -41,9 +41,6 @@ void led_show_direction(Direction dir);
  * @param error_active The error status to display.
  */
 void led_show_error(bool error_active);
-
-
-
 
 #endif // LED_OUTPUT_H
 

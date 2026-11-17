@@ -21,14 +21,12 @@ void time_init(void) {
 }
 
 void time_update(void) {
-    uint32_t current = getTimeStamp();
-    uint32_t diff = current - last_ticks;
+   uint32_t current = getTimeStamp();
+   uint32_t diff = current - last_ticks;
 
-    total_ticks += diff;
-    last_ticks = current;
+   total_ticks += diff;
+   last_ticks = current;
 }
 
-uint64_t time_now(void) {
-    return total_ticks;
-}
+uint64_t time_now(void) { return total_ticks; }
 // EOF

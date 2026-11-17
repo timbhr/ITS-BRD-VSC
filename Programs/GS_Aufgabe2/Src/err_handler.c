@@ -13,19 +13,13 @@
 static int active_error = ERR_OK;
 
 void err_handle(int code) {
-    if (code != ERR_OK && active_error == ERR_OK) {
-        active_error = code;
-    }
+   if (code != ERR_OK && active_error == ERR_OK) {
+      active_error = code;
+   }
 }
 
-bool err_is_active(void) {
-    return active_error != ERR_OK;
-}
+bool err_is_active(void) { return active_error != ERR_OK; }
 
-int err_get_code(void) {
-    return active_error;
-}
+int err_get_code(void) { return active_error; }
 
-void err_clear(void) {
-    active_error = ERR_OK;
-}
+void err_clear(void) { active_error = ERR_OK; }

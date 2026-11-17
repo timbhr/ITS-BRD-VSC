@@ -13,15 +13,15 @@
 
 #include "types.h"
 
-/** 
- * @brief Reset the phase counter. First update after reset will not compare for a phase change.
- *        Only the phase will be taken over. The will not change.
+/**
+ * @brief Reset the phase counter. First update after reset will not compare for
+ * a phase change. Only the phase will be taken over. The will not change.
  */
 void pc_reset(void);
 
 /**
  * @brief Update phase counter with new phase sample.
- * 
+ *
  * @param sample New phase sample
  *
  * @retval ERR_OK Success
@@ -31,7 +31,7 @@ int pc_update(PhaseSample sample);
 
 /**
  * @brief Get the current phase count.
- * 
+ *
  * @return Current phase count
  */
 int32_t pc_get_count(void);
@@ -45,7 +45,7 @@ uint64_t pc_get_count_timestamp(void);
 
 /**
  * @brief Get the current direction of the phase counter.
- * 
+ *
  * @return Current direction of the phase counter
  */
 Direction pc_get_direction(void);

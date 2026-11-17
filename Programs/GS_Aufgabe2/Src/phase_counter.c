@@ -21,52 +21,46 @@ static Direction direction = DIR_UNKNOWN;
 static bool first_sample = true;
 
 void pc_reset(void) {
-    count = 0;
-    direction = DIR_UNKNOWN;
-    first_sample = true;
+   count = 0;
+   direction = DIR_UNKNOWN;
+   first_sample = true;
 }
 
 int pc_update(PhaseSample sample) {
-    if (first_sample) {
-        last_phase = sample.phase;
-        count_timestamp = sample.timestamp;
-        first_sample = false;
-        return ERR_OK;
-    }
+   if (first_sample) {
+      last_phase = sample.phase;
+      count_timestamp = sample.timestamp;
+      first_sample = false;
+      return ERR_OK;
+   }
 
-    int diff = ((int)sample.phase - (int)last_phase) & PHASE_MASK;
+   int diff = ((int)sample.phase - (int)last_phase) & PHASE_MASK; // NOLINT
 
-    switch (diff) {
-    case 1: // step forward
-        count++;
-        direction = DIR_FORWARD;
-        count_timestamp = sample.timestamp;
-        break;
-    case 3: // step backward
-        count--;
-        direction = DIR_BACKWARD;
-        count_timestamp = sample.timestamp;
-        break;
-    case 2: // phase skipped
-        return ERR_PHASE_SKIPPED;
-    default: // 0: no change
-        break;
-    }
+   switch (diff) {
+   case 1: // step forward
+      count++;
+      direction = DIR_FORWARD;
+      count_timestamp = sample.timestamp;
+      break;
+   case 3: // step backward
+      count--;
+      direction = DIR_BACKWARD;
+      count_timestamp = sample.timestamp;
+      break;
+   case 2: // phase skipped
+      return ERR_PHASE_SKIPPED;
+   default: // 0: no change
+      break;
+   }
 
-    last_phase = sample.phase;
-    return ERR_OK;
+   last_phase = sample.phase;
+   return ERR_OK;
 }
 
-int32_t pc_get_count(void) {
-    return count;
-}
+int32_t pc_get_count(void) { return count; }
 
-uint64_t pc_get_count_timestamp(void) {
-    return count_timestamp;
-}
+uint64_t pc_get_count_timestamp(void) { return count_timestamp; }
 
-Direction pc_get_direction(void) {
-    return direction;
-}
+Direction pc_get_direction(void) { return direction; }
 
 // EOF

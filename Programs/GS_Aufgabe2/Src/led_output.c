@@ -20,37 +20,37 @@
 #define LED_D23 (1U << 7) // PE7: forward
 
 void led_init(void) {
-    GPIOD->BSRR = COUNT_MASK << RESET_SHIFT;
-    GPIOE->BSRR = (LED_D21 | LED_D22 | LED_D23) << RESET_SHIFT;
+   GPIOD->BSRR = COUNT_MASK << RESET_SHIFT;
+   GPIOE->BSRR = (LED_D21 | LED_D22 | LED_D23) << RESET_SHIFT;
 }
 
 void led_show_count(int32_t count) {
-    uint32_t bits = (uint32_t)count & COUNT_MASK; // lower 8 bits
-    uint32_t off = ~bits & COUNT_MASK; // the other ones
+   uint32_t bits = (uint32_t)count & COUNT_MASK; // lower 8 bits
+   uint32_t off = ~bits & COUNT_MASK;            // the other ones
 
-    GPIOD->BSRR = bits | (off << RESET_SHIFT);
+   GPIOD->BSRR = bits | (off << RESET_SHIFT);
 }
 
 void led_show_direction(Direction dir) {
-    switch (dir) {
-    case DIR_FORWARD:
-        GPIOE->BSRR = LED_D23 | (LED_D22 << RESET_SHIFT);
-        break;
-    case DIR_BACKWARD:
-        GPIOE->BSRR = LED_D22 | (LED_D23 << RESET_SHIFT);
-        break;
-    default: // DIR_UNKNOWN: both off
-        GPIOE->BSRR = (LED_D22 | LED_D23) << RESET_SHIFT;
-        break;
-    }
+   switch (dir) {
+   case DIR_FORWARD:
+      GPIOE->BSRR = LED_D23 | (LED_D22 << RESET_SHIFT);
+      break;
+   case DIR_BACKWARD:
+      GPIOE->BSRR = LED_D22 | (LED_D23 << RESET_SHIFT);
+      break;
+   default: // DIR_UNKNOWN: both off
+      GPIOE->BSRR = (LED_D22 | LED_D23) << RESET_SHIFT;
+      break;
+   }
 }
 
 void led_show_error(bool error_active) {
-    if (error_active) {
-        GPIOE->BSRR = LED_D21;
-    } else {
-        GPIOE->BSRR = LED_D21 << RESET_SHIFT;
-    }
+   if (error_active) {
+      GPIOE->BSRR = LED_D21;
+   } else {
+      GPIOE->BSRR = LED_D21 << RESET_SHIFT;
+   }
 }
 
 // EOF

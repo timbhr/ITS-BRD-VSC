@@ -21,7 +21,8 @@ void time_init(void);
 /**
  * @brief Update timekeeping
  *
- * @note Must be called at least once in ~47s, otherwise timer overflows and timekeeping will be incorrect.
+ * @note Must be called at least once in ~47s, otherwise timer overflows and
+ * timekeeping will be incorrect.
  */
 void time_update(void);
 

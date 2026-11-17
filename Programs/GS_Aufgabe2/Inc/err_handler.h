@@ -13,11 +13,12 @@
 
 #include <stdbool.h>
 
-#define ERR_OK 0 // No error
+#define ERR_OK 0               // No error
 #define ERR_PHASE_SKIPPED (-1) // phase_counter: Phase was skipped
-#define ERR_DISPLAY_BUFFER (-2) // display_out: Formatted text exceeds display buffer
+#define ERR_DISPLAY_BUFFER                                                     \
+   (-2) // display_out: Formatted text exceeds display buffer
 
-/** 
+/**
  * @brief Setting error code and activating error state.
  *        ERR_OK has no effect. Any other activates error state.
  *        Error state will stay active until err_clear() is called.
@@ -28,7 +29,7 @@ void err_handle(int code);
 
 /**
  * @brief Check if an error is active.
- * 
+ *
  * @return true if an error is active, false otherwise
  */
 bool err_is_active(void);
