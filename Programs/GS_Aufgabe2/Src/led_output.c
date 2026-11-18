@@ -11,13 +11,13 @@
 #include "led_output.h"
 #include "stm32f429xx.h"
 
-#define RESET_SHIFT 16 // BSRR: upper 16 bits reset pins
+#define RESET_SHIFT 16U // BSRR: upper 16 bits reset pins
 
 #define COUNT_MASK 0xFFU // D8-D15 = PD0-PD7
 
-#define LED_D21 (1U << 5) // PE5: error
-#define LED_D22 (1U << 6) // PE6: backward
-#define LED_D23 (1U << 7) // PE7: forward
+#define LED_D21 (1U << 5U) // PE5: error
+#define LED_D22 (1U << 6U) // PE6: backward
+#define LED_D23 (1U << 7U) // PE7: forward
 
 void led_init(void) {
    GPIOD->BSRR = COUNT_MASK << RESET_SHIFT;

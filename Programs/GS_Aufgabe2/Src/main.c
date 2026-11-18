@@ -17,14 +17,16 @@
 #include "led_output.h"
 #include "measurement.h"
 #include "phase_counter.h"
+#include "test.h"
 #include "timekeeping.h"
 #include "types.h"
 #include <stdbool.h>
 
-int main(void) {
-   initITSboard();
-   GUI_init(DEFAULT_BRIGHTNESS);
-
+/**
+ * @brief Normal operation: evaluates the encoder in the super loop.
+ *        Never returns.
+ */
+static void run_encoder(void) {
    time_init();
    led_init();
    disp_init();
@@ -73,6 +75,22 @@ int main(void) {
       led_show_error(err_is_active());
       disp_step();
    }
+}
+
+int main(void) {
+   initITSboard();
+   GUI_init(DEFAULT_BRIGHTNESS);
+
+   const bool RUN_TESTS = false; // true = run tests, false = normal operation
+
+   if (RUN_TESTS) {
+      test_run_all();
+      while (1) {
+         // tests done, results are shown on the display
+      }
+   }
+
+   run_encoder();
 }
 
 // EOF

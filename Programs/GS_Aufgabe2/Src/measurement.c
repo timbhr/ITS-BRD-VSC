@@ -42,8 +42,9 @@ void meas_reset(int32_t count,  // NOLINT (bugprone-easily-swappable-parameters)
    velocity = 0.0;
 }
 
-void meas_update(int32_t count,       // NOLINT (bugprone-easily-swappable-parameters)
-                 uint64_t count_ts) { // NOLINT (bugprone-easily-swappable-parameters)
+void meas_update(
+    int32_t count,       // NOLINT (bugprone-easily-swappable-parameters)
+    uint64_t count_ts) { // NOLINT (bugprone-easily-swappable-parameters)
    // only recalculate if there is a new phase change
    if (count_ts <= last_change_ts) {
       return;

@@ -111,7 +111,7 @@
             "type": "shell",
             "command": "python3",
             "args": [
-                "${workspaceFolder}/bin/format_all.py",
+                "${workspaceFolder}/../../bin/format_all.py",
                 "${command:cmsis-csolution.getSolutionFile}"
             ],
             "group": "none"
@@ -121,7 +121,7 @@
             "type": "shell",
             "command": "python3",
             "args": [
-                "${workspaceFolder}/bin/lint_all.py",
+                "${workspaceFolder}/../../bin/lint_all.py",
                 "${command:cmsis-csolution.getSolutionFile}"
             ],
             "group": "none"

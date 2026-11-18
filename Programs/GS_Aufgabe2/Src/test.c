@@ -32,7 +32,7 @@ static int failed = 0;
 static unsigned int fail_line = 2; /* lines 0 and 1: summary */
 static char line_buf[LINE_LEN];
 
-/* ---------- helpers ---------- */ 
+/* ---------- helpers ---------- */
 // NOLINTBEGIN
 
 static void check(bool condition, const char *name) {
