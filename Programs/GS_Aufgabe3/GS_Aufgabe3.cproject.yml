@@ -92,6 +92,7 @@ project:
         - file: README.md
         - file: Docs/ModulAbhaengigkeiten.md
         - file: Docs/ModulAbhaengigkeiten.svg
+        - file: Docs/Modulkonzept Bitmap.drawio
 
     # BSP-Treiber für STM32F4xx Nucleo 144 Board
     - group: Drivers/BSP/STM32F4xx_Nucleo_144
@@ -190,7 +191,6 @@ project:
         - file: Inc/cdc_input_if.h
         - file: Inc/errorhandler.h
         - file: Inc/fileHeader.h
-        - file: Inc/GS_Aufgabe3_ITSboard.sct
         - file: Inc/headers.h
         - file: Inc/input.h
         - file: Inc/main.h
